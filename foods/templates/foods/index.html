@@ -1,9 +1,9 @@
 {% if all_food_items %}
     <ul>
     {% for food_item in all_food_items %}
-        <li><a href="/polls/{{ food_item.id }}/">{{ food_item.item_name }}</a></li>
+        <li><a href="/foods/{{ food_item.id }}/">{{ food_item.item_name }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
-    <p>No polls are available.</p>
+    <p>No available.</p>
 {% endif %}

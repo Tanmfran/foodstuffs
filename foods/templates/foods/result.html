@@ -1,0 +1,7 @@
+<h1>{{ fooditems.item_name }}</h1>
+
+<b>
+Cost is {{ fooditems.item_cost }} * {{ fooditems.quantity }} = {{ total_cost }}
+</b><ul></ul>
+
+<a href="{% url 'foods:detail' fooditems.id %}">Change quantity?</a>

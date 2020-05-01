@@ -1,0 +1,21 @@
+<h1>{{ fooditems.item_name }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'foods:update_quantity' fooditems.id %}" method="post">
+{% csrf_token %}
+<h2>How many?</h2>
+<label for="quantity">Quanitity</label>
+<select id="quantity">
+{% for i in "12345" %}
+    <option id="num{{ forloop.counter }}" value="{{ i }}" name="quantity">
+    </option>
+
+{% endfor %}
+</select>
+<input type="submit" value="Vote">
+</form>
+
+
+    <input type="radio" name="quantity" id="num{{ forloop.counter }}" value="{{ i }}">
+    <label for="choice{{ forloop.counter }}">{{ i }}</label><br>
